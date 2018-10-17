@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_recycler.*
 
 class RecyclerFragment: Fragment() {
 
@@ -27,7 +26,7 @@ class RecyclerFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewManager = LinearLayoutManager(activity)
-        viewAdapter = RecyclerAdapter(data)
+        viewAdapter = RecyclerAdapter(activity!!, data)
 
 
         recyclerView = activity!!.findViewById(R.id.recyclerViewList)
