@@ -17,7 +17,6 @@ class RecyclerFragment: Fragment() {
 
     private val data = ArrayList<String>()
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_recycler, container, false)
         return view
@@ -41,10 +40,7 @@ class RecyclerFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         loadDummyData()
-
-
     }
 
     private fun loadDummyData() {

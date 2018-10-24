@@ -2,6 +2,7 @@ package com.example.oscarzhang.expandablerecyclerviewdemo
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.TypedValue
@@ -36,11 +37,11 @@ class RecyclerAdapter(private val dataSet: ArrayList<String>): RecyclerView.Adap
 
         viewholder.itemView.layoutParams.height = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70.toFloat(), viewholder.itemView.context.resources.displayMetrics).toInt()
 
+        val icon = BitmapFactory.decodeResource(viewholder.itemView.context.resources, R.drawable.ic_launcher_background)
+        val dummyInnerList = listOf<Bitmap>(icon, icon, icon, icon, icon)
 
         viewholder.itemView.innerRecycler.layoutManager = GridLayoutManager(viewholder.itemView.context, 3)
-        viewholder.itemView.innerRecycler
-
-
+        viewholder.itemView.innerRecycler.adapter = InnerAdapter(dummyInnerList as ArrayList<Bitmap>)
 
 
         viewholder.itemView.frameContainer.setOnClickListener {
